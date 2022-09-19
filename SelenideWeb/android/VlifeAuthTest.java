@@ -26,18 +26,14 @@ public class VlifeAuthTest {
     void calculator() throws InterruptedException {
         $(By.id(skipBtn)).click();
         $(By.id(loginBtn)).click();
-        $(By.id(phoneNum)).val("7010912070");
+        $(By.id(phoneNum)).val("########");  // Номер телефона
         $(By.id(phoneContinue)).click();
-        $(By.id(passwordID)).val("asdfghjklP0");
+        $(By.id(passwordID)).val("########");  // Пароль
         $(By.xpath(passContinue)).click();
 
         $(By.id(skipBtn)).click();
 
-        $(By.id("username_text_view")).shouldHave(Condition.exactText("Двн Дан"));
-        $(By.id("user_data_text_view")).shouldHave(Condition.exactText("+7701 091 2070 • Алматы"));
-    }
-    @Test
-    void encoding() {
-        System.out.println("Привет!");
+        $(By.id("username_text_view")).shouldHave(Condition.exactText("#####"));  // Имя юзера
+        $(By.id("user_data_text_view")).shouldHave(Condition.exactText("#####"));  // Телефон и город
     }
 }
